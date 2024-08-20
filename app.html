@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleCronometro.css">
+</head>
+<body>
+    <section id="principal">
+        <button id="button_volta">Mark</button>
+        <h1><span id="horas">00</span>:<span id="minutos">00</span>:<span id="segundos">00</span></h1>
+        <div id="divi">
+            <button id="button_start" onclick="startTimer()"> Start</button>
+            <button id="button_stop" onclick="breakTimer()">Stop</button>
+        </div>
+        <div id="local_mark_time">
+            <div id="local_mark_time_button">
+                <button class="button_delet_ultimo_mark" onclick="removeNewMark()">x</button>
+                <button class="button_delet_ultimo_mark" onclick="removeNewMarkAll()">=</button>
+            </div>
+            <hr>
+        </div>
+    </section>
+    <script src="scriptCronometro.js"></script>
+</body>
+</html>
