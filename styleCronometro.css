@@ -68,3 +68,9 @@ hr{
     display: flex;
     justify-content: space-between;
 }
+#local_mark_time_tempos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}

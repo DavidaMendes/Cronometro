@@ -10,6 +10,7 @@ let isRunning = false;
 
 let t = 0;
 
+let divTempos = document.getElementById("local_mark_time_tempos");
 let divMarkTime = document.getElementById("local_mark_time");
 let buttonMark = document.getElementById("button_volta");
 
@@ -93,28 +94,11 @@ function markTime() {
 
   if (lenghtMarkClass < 4) {
     let newMark = document.createElement("h1");
-    newMark.innerHTML =
-      formatTime(hr) + ":" + formatTime(min) + ":" + formatTime(seg);
+    newMark.innerHTML = formatTime(hr) + ":" + formatTime(min) + ":" + formatTime(seg);
+    newMark.style.fontSize = "24px";
+    newMark.style.fontFamily = "Arial";
     newMark.classList.add("mark-class");
-    divMarkTime.appendChild(newMark);
-  }
-
-  if (lenghtMarkClass + 1 >= 4) {
-    condctionInicialButtonMark();
-  }
-}
-
-buttonMark.addEventListener("click", markTime);
-
-function markTime() {
-  let lenghtMarkClass = document.getElementsByClassName("mark-class").length;
-
-  if (lenghtMarkClass < 4) {
-    let newMark = document.createElement("h1");
-    newMark.innerHTML =
-      formatTime(hr) + ":" + formatTime(min) + ":" + formatTime(seg);
-    newMark.classList.add("mark-class");
-    divMarkTime.appendChild(newMark);
+    divTempos.appendChild(newMark);
   }
 
   if (lenghtMarkClass + 1 >= 4) {
@@ -128,7 +112,7 @@ function removeNewMark() {
   let marks = document.getElementsByClassName("mark-class");
   if (marks.length > 0) {
     let lastMark = marks[marks.length - 1];
-    divMarkTime.removeChild(lastMark);
+    divTempos.removeChild(lastMark);
   }
 
   if (marks.length <= 4) {
